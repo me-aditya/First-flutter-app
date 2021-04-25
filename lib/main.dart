@@ -4,6 +4,9 @@ void main() {
   runApp(MaterialApp(
     title: "First Flutter App",
     home: HomePage(),
+    theme: ThemeData(
+      primarySwatch: Colors.purple,
+    ),
   ));
 }
 
@@ -14,27 +17,57 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("First Flutter App"),
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: Container(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.edit),
+      ),
+      drawer: Drawer(
+          child: ListView(
+        padding: EdgeInsets.zero,
         children: <Widget>[
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.red,
+          // DrawerHeader(
+          //   child: Text("Aditya",
+          //       style: TextStyle(
+          //         color: Colors.white,
+          //       )),
+          //   decoration: BoxDecoration(
+          //     color: Colors.blue,
+          //   ),
+          // ),
+          UserAccountsDrawerHeader(
+              accountName: Text("Aditya"),
+              accountEmail: Text("adityarathi@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"),
+              )),
+          ListTile(
+            leading: Icon(Icons.edit),
+            title: Text("Add text"),
+            subtitle: Text("TabNine love"),
+            trailing: Icon(Icons.add),
           ),
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.green,
+          ListTile(
+            leading: Icon(Icons.edit),
+            title: Text("Add text"),
+            subtitle: Text("TabNine love"),
+            trailing: Icon(Icons.send_and_archive),
           ),
-          Container(
-            height: 100,
-            width: 100,
-            color: Colors.pink,
+          ListTile(
+            leading: Icon(Icons.edit),
+            title: Text("Add text"),
+            subtitle: Text("TabNine love"),
+            trailing: Icon(Icons.search_off_outlined),
+          ),
+          ListTile(
+            leading: Icon(Icons.edit),
+            title: Text("Add text"),
+            subtitle: Text("TabNine love"),
+            trailing: Icon(Icons.zoom_out_rounded),
           ),
         ],
-      ),
+      )),
     );
   }
 }
