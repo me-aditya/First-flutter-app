@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_first/bgImage.dart';
 import 'package:flutter_first/drawer.dart';
 
 void main() {
@@ -44,12 +45,7 @@ class _HomePageState extends State<HomePage> {
           child: Card(
               child: Column(
             children: <Widget>[
-              Image.asset(
-                "assets/images/2.jpg",
-                fit: BoxFit.cover,
-                height: 200,
-                width: 600,
-              ),
+              BgImage(),
               SizedBox(
                 height: 20,
               ),
