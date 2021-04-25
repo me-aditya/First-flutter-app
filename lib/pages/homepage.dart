@@ -46,9 +46,14 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(8.0),
         child: data != null
             ? ListView.builder(itemBuilder: (context, index) {
-            return ListTile(
-              
-            );
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    leading: Image.network(data[index]["url"]),
+                    title: Text(data[index]["title"]),
+                    subtitle: Text("ID : ${data[index]["id"]}"),
+                  ),
+                );
               })
             : Center(
                 // child: CircularProgressIndicator(),
