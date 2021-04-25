@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_first/bgImage.dart';
 import 'package:flutter_first/drawer.dart';
+
+import 'change_card_name.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -42,29 +43,8 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
-          child: Card(
-              child: Column(
-            children: <Widget>[
-              BgImage(),
-              SizedBox(
-                height: 20,
-              ),
-              Text(myText,
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextField(
-                      controller: _nameController,
-                      decoration: InputDecoration(
-                        hintText: "Enter Something",
-                        border: OutlineInputBorder(),
-                        labelText: "Name",
-                      )))
-            ],
-          )),
+          child:
+              ChangeCardName(myText: myText, nameController: _nameController),
         ),
       ),
       drawer: MyDrawer(),
