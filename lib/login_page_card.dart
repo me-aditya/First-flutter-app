@@ -40,10 +40,11 @@ class LoginPageCard extends StatelessWidget {
           ElevatedButton(
             child: Text("Login"),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => HomePage()),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => HomePage()),
+              // );
+              Navigator.pushNamed(context, "/home");
             },
           ),
         ]),
