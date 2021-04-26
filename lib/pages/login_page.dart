@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_first/bgImage.dart';
 import 'package:flutter_first/login_page_card.dart';
 
 class LoginPage extends StatefulWidget {
@@ -15,6 +16,11 @@ class _LoginPageState extends State<LoginPage> {
         appBar: AppBar(
           title: Text("Login Screen"),
         ),
-        body: LoginPageCard());
+        body: Stack(fit: StackFit.expand, children: <Widget>[
+          BgImage(),
+          Center(
+            child: LoginPageCard(),
+          ),
+        ]));
   }
 }
